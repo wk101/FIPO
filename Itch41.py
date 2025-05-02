@@ -1,3 +1,34 @@
+"""
+ITCH 4.1 Message Parser Framework for NASDAQ Market Data
+
+This module provides a complete parsing system for NASDAQ ITCH 4.1 protocol messages,
+designed for use in low-latency trading systems, FPGA pre-processing, and market data
+research environments.
+
+It includes:
+
+- `MessageType`: Enum of all supported ITCH message types.
+- `Field`: Named constants representing all supported field labels.
+- `ItchMessage`: Base class for all ITCH message types. Handles serialization, deserialization,
+  byte dumping, and field access.
+- `ItchMessageFactory`: Factory for instantiating message classes from raw bytes or argument maps.
+- One subclass per ITCH message type (e.g., `AddOrder`, `SystemEvent`, `StockDirectory`, etc.),
+  each defining its binary layout via `self.specs`.
+
+Each message subclass:
+- Defines fixed byte layouts based on the ITCH 4.1 specification.
+- Supports round-trip conversion between raw bytes and Python field values.
+- Optionally supports saving to `.itch` binary files or logging for debugging.
+
+Usage:
+    - Create messages with `.createFromArgs([MessageType, field_dict])`
+    - Parse raw packets with `.createFromBytes(raw_bytes)`
+    - Access structured fields via `.getValue(field_name)`
+    - View byte-level structure via `.dumpRawBytes()` or `.dumpPretty()`
+
+This parser is designed to support both host-side simulations and embedded environments,
+including integration with FPGA-based order book logic.
+"""
 
 from enum import Enum
 import struct
