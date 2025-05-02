@@ -55,3 +55,18 @@ The `FIPO FPGA ITCH Parser & OrderBook` project contains multiple components org
    ```bash
    git clone https://github.com/hftconsultancy/FIPO
 
+
+- **Open in LabVIEW**  
+  Open the `.lvproj` file using **LabVIEW FPGA Module (2020 or later)**.
+
+- **Build FPGA Bitfiles**  
+  Go to `Project Explorer > Build Specifications`  
+  Right-click `Fpga-ItchParser-TestHarness` or `Fpga-OrderBook-TestHarness`  
+  Select **Build**
+
+- **Run Host Test Harnesses**  
+  Use host VIs under **My Computer** to validate ITCH parsing and order book logic.
+
+- **Simulate or Deploy to FPGA**  
+  Run in **Simulation Mode** using the **PXIe-6592R** simulation target  
+  Or deploy to actual **PXIe-6592R FPGA hardware**
