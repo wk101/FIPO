@@ -35,7 +35,7 @@ The `FIPO FPGA ITCH Parser & OrderBook` project contains multiple components org
 - **OrderBook**
   - `Fpga-OrderBook.vi`: FPGA implementation of the OrderBook.
 
-### Common
+### Common Utilities
 - **Utilities**
   - `Fpga-Get-Integer8.vi`, `Fpga-Get-Integer32.vi`, `Fpga-Get-Integer64.vi`: Utility VIs for handling integers of different sizes on the FPGA.
   - `Fpga-OrderBook-Command.ctl`: Control definitions for OrderBook commands.
