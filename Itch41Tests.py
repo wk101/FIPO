@@ -1,3 +1,28 @@
+"""
+Unit tests for ITCH 4.1 message parsing and construction.
+
+This test suite validates the functionality of ItchMessageFactory and its message subclasses
+for both programmatically constructed messages and raw byte streams as encountered in live feeds.
+
+Tests included:
+- Creation of ITCH messages using structured field inputs (`createFromArgs`)
+- Parsing of binary-encoded ITCH messages (`createFromBytes`)
+- Verification of field integrity after round-trip encoding/decoding
+- Price handling (conversion from integer to float with correct scaling)
+- Symbol padding (e.g., MPIDs and Stocks)
+- Raw binary format verification for end-to-end transport safety
+
+Message types covered:
+- TimeStamp, SystemEvent, StockDirectory, StockTradingAction
+- RegSHORestriction, MarketParticipantPosition
+- AddOrder, AddOrderWithMPID
+- OrderExecuted, OrderExecutedWithPrice, OrderCancel, OrderDelete, OrderReplace
+- TradeNonCross, CrossTrade, BrokenTrade, NetOrderImbalance, RetailInterestMessage
+
+Run using:
+    python3 -m unittest <this_file>.py
+"""
+
 #!/usr/bin/env python3
 
 import unittest
