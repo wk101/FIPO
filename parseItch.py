@@ -1,3 +1,20 @@
+"""
+ITCH 4.1 File Parser for NASDAQ Market Data
+
+This script parses a binary ITCH 4.1 file, extracts and decodes individual messages,
+and optionally performs one of the following:
+- Builds an in-memory order book (AAPL only, from 'AddOrder' and 'AddOrderWithMPID' messages)
+- Dumps one instance of each message type as a Python unit test stub
+
+To use:
+- Download sample ITCH files from: ftp://emi.nasdaq.com/ITCH/
+- Update `fileName` as needed
+- Choose processing mode via `fptr` selector
+
+Dependencies:
+- `Itch41.py` must be present and implement message parsing logic (see ItchMessageFactory)
+"""
+
 #!/usr/bin/python3
 #/usr/bin/env python3
 
@@ -6,7 +23,7 @@ from Itch41 import *
 
 #### Parameters for Execution
 # Download from here: ftp://emi.nasdaq.com/ITCH/11092013.NASDAQ_ITCH41.gz
-fileName = "/Users/john/Downloads/11092013.NASDAQ_ITCH41"
+fileName = "C:/11092013.NASDAQ_ITCH41"
 #fileName = "11092013.NASDAQ_ITCH41"
 outputFile = "Itch.dat"
 saveMessageTypes = [ 'A' ]
